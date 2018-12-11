@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                margin: 0 auto;
+                font-size: 36px;
+                width: 1000px;
+                text-align: center;
+                margin-top: 300px;
+                font-weight: bold;
+            }
+            .button1 {
+                display: inline-block;
+                background-color: pink;
+                height: 60px;
+                width: 200px;
+                font-size: 18px;
+                border-radius: 20px;
+            }
+            .button2 {
+                display: inline-block;
+                background-color: aqua;
+                height: 60px;
+                width: 100px;
+                font-size: 18px;
+                border-radius: 20px;
+            }
+            .form {
+                display: inline-block;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Counter</h2>
+        <div>
+            {{session['count']}} times
+        </div>
+        <div class="form">
+                <form action="/addtwo" method="GET">
+                    <button class="button1"><div>Add two visits!</div></button>
+                </form>
+        </div>
+        <div class="form">
+                <form action="/destroy_session" method="GET">
+                    <button class="button2"><div>Clear</div></button>
+                </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                margin: 0 auto;
+                font-size: 36px;
+                width: 1000px;
+                border: 1px solid black;
+                text-align: center;
+                margin-top: 300px;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>Counter</div>
+        <div>
+            {{session['count']}} times
+        </div>
+        <div>
+        <form action="/addtwo" method="POST">
+            <input type='text' name="addtwo" value="2">
+            <button>Add two visits!</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
