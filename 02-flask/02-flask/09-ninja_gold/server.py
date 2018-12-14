@@ -5,18 +5,18 @@ app.secret_key = "afjasfkja87"
 @app.route('/', methods=["get","post"])
 
 def index():
-    temp = session['num']
-    session['num'] = 0
-    session['num'] = temp
-    if session['add'] > 0:
+    add = 0
+    if add not in session:
+        session['num'] = 0
+    elif session['add'] > 0:
         tmp = session['message'] 
-        message = "Earned " + str(session['add']) + " golds from the " + session['place'] + "  " + "(" + str(datetime.datetime.now()) + ")"
-        session['message'] = message + "\n" + tmp  
+        session['message'] = "Earned " + str(session['add']) + " golds from the " + session['place'] + "  " + "(" + str(datetime.datetime.now()) + ")"
+        session['message'] = session['message'] + "\n" + tmp  
     else:
         tmp = session['message'] 
-        message = "Entered a casino and lost " + str(session['add']) + " golds... Ouch." + "  " + "(" + str(datetime.datetime.now()) + ")"
-        session['message'] = message + "\n" + tmp
-    return render_template("index.html", message=message )
+        session['message'] = "Entered a casino and lost " + str(session['add']) + " golds... Ouch." + "  " + "(" + str(datetime.datetime.now()) + ")"
+        session['message'] = session['message'] + "\n" + tmp
+    return render_template("index.html" )
 
 @app.route('/process_money', methods=["get","post"])
 def process_money():

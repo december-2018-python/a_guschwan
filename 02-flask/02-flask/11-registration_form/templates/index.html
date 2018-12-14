@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 1150px;
+            margin: 100px auto;
+            display: block;
+            font-size: 48px;
+            border: 2px solid black;
+            padding: 20px 20px;
+        }
+
+        label {
+            display: inline;
+        }
+        input {
+            font-size:42px;
+            margin-left: 220px;
+            height: 50px;
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 48px;
+        }
+        button {
+            font-size: 24px;
+            margin-top: 5px;
+            margin-left: 800px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+                <p>{{message}}</p>
+              {% endfor %}
+            {% endif %}
+            {% endwith %}
+        <h1>Registration</h1>
+        <div class="row">
+            <form action="/verify" method="POST">
+                
+                <div class="col-xs-8">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control input-lg col-xs-4" name="email" id="name">
+                </div>
+                <div class="col-xs-8">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" class="form-control input-lg" name="first_name" id="first_name"/>
+                </div>
+                <div class="col-xs-8">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" class="form-control input-lg" name="last_name" id="last_name"/>
+                </div>
+                <div class="col-xs-8">
+                    <label for="password">Password:</label>
+                    <input type="text" class="form-control input-lg" name="password" id="password"/>
+                </div>
+                <div class="col-xs-8">
+                    <label for="password_confirm">Confirm Password:</label>
+                    <input type="text" class="form-control input-lg" name="password_confirm" id="password_confirm"/>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
