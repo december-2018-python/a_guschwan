@@ -9,58 +9,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <title>Ninja Gold</title>
-    <style type="text/css">
-        * { 
-            margin: 0;
-            padding: 0;
-        }
-
-        textarea {
-            width: 100%;
-            border: 1px solid black;
-        }
-        .container {
-            margin: 0 auto;
-            width: 975px;
-            font-size: 24px;
-        }
-        .row {
-            padding-top: 50px;
-        }
-
-        .getbord {
-            border: 1px solid black;
-            width:220px;
-            margin-right: 20px;
-        }
-        
-        form input {
-            margin-top: 60px;
-            margin-bottom: 20px;
-        }
-            input {
-                display: inline-block;
-            }
-        p.green {
-            color: green;
-        }
-        p.red {
-            color: red;
-        }
-        .message {
-            width: 800px;
-            height: 175px;
-            border: 1px solid black;
-            overflow: scroll;
-        }
-
-    </style>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-6"><h3>Your Gold: {{session['num']}}</h3></div>
+            <div class="col-md-6">
+                <h3>Your Gold: {{session['num']}}</h3></div>
             <div class="col-md-6"></div>
         </div>
         <div class="row">
@@ -107,11 +63,10 @@
         </div>
         <div class="row col-lg-12">
             <label for="ta" >Activities</label>
-        <!--    <textarea type="text" class="md-textarea" id="ta" rows=5> 
-             {{message | safe}}
-            </textarea>-->
             <div class="message">
-                 {{session['message']}}
+                {% for s in session['message']%}
+                    <div>{{s | safe}}</div>
+                {% endfor %}
             </div>
         </div>
     </div>

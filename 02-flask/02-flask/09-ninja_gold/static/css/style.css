@@ -1,0 +1,43 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid black;
+}
+.container {
+    margin: 0 auto;
+    width: 975px;
+    font-size: 24px;
+}
+.row {
+    padding-top: 50px;
+}
+
+.getbord {
+    border: 1px solid black;
+    width:220px;
+    margin-right: 20px;
+}
+
+form input {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+    input {
+        display: inline-block;
+    }
+p.green {
+    color: green;
+}
+p.red {
+    color: red;
+}
+.message {
+    width: 850px;
+    height: 175px;
+    border: 1px solid black;
+    overflow: scroll;
+}
