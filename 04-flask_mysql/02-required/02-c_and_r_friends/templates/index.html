@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Friends Create Read</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 24px;
+    }
+    h1 {
+        margin-top: 50px;
+        text-align: left;
+    }
+    div.row{
+        padding-right: 30px;
+    }
+    .inl {
+        display: inline-block;
+        padding-right: 100px;
+    }
+        .inl1 {
+            border-right: 2px solid black;
+        }
+    .border {
+        border: 2px solid black;
+    }
+        .border-right {
+            border-right: 2px solid black;
+        }
+    .lgray {
+        background: lightgray;
+        text-align: left;
+    }
+    .left {
+        text-align: left;
+    }
+    .under {
+        text-decoration: underline;
+    }
+    button {
+        margin-left: 600px;
+    }
+    label {
+        
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>These are my friends!</h1>
+        <div class="row border">
+            <div class="inl border-right">
+                <span class="lgray">First Name</span>
+            {% for x in friends %}
+                <div class="left">
+            {{ x['first_name']}}
+                </div>
+            {% endfor %}
+            </div>
+            <div class="inl border-right">
+                <span class="lgray">Last Name</span>
+            {% for x in friends %}
+                <div class="left">
+            {{ x['last_name']}}
+                </div>
+            {% endfor %}
+            </div>
+            <div class="inl">
+                <span class="lgray">Occupation</span>
+            {% for x in friends %}
+                <div class="left">
+            {{ x['occupation']}}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        <h1 class="under">Add a Friend</h1>
+        <div>
+            <form action="/create/friend" method="POST">
+                <div><label for="fname">First Name:</label> 
+                <input type="text" name="fname" id="fname"></div>
+                <div></div><label for="fname">Last Name:</label>
+                <input type="text" name="lname" id="lname"></div>
+                <div><label for="fname">Occupation:</label>
+                <input type="text" name="occupation" id="occupation"></div>     
+                <button>Add</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

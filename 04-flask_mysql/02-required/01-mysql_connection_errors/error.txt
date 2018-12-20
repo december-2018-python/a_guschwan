@@ -1,0 +1,42 @@
+File "C:\CodingDojo\Assignments2\mysql_flask\mysqlconnection.py", line 38
+    print("Something went wrong" copy, e)
+                                    ^
+SyntaxError: invalid syntax
+Fix:  print("Something went wrong", copy, e) - added a comma
+
+ File "C:\CodingDojo\Assignments2\mysql_flask\mysqlconnection.py", line 45
+    def connectToMySQL(db):
+    ^
+IndentationError: expected an indented block
+Fix:     added connection close statement before the statement in error
+ self.connection.close()
+# this connectToMySQL function creates an instance of MySQLConnection, which will be used by server.py
+# connectToMySQL receives the database we're using and uses it to create an instance of MySQLConnection
+    def connectToMySQL(db):
+        return MySQLConnection(db)
+
+File "server.py", line 3, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL'
+Fix: added line to code
+# establish the connection to the database
+        self.connection = connection
+
+File "server.py", line 3, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL'
+Fix: get rid of Indentation
+def connectToMySQL(db):
+    return MySQLConnection(db)
+
+ File "C:\CodingDojo\Assignments2\mysql_flask\mysqlconnection.py", line 46, in connectToMySQL
+    return MySQLConection(db)
+NameError: name 'MySQLConection' is not defined
+Fix: MySQLConnection is misspelled
+return MySQLConnection(db)
+
+ File "C:\CodingDojo\Assignments2\mysql_flask\mysqlconnection.py", line 38, in query_db
+    print("Something went wrong", copy, e)
+NameError: name 'copy' is not defined
+Fix: remove the copy.
+ print("Something went wrong", e)
