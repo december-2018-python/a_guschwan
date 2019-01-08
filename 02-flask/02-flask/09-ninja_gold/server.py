@@ -14,7 +14,6 @@ def index():
 @app.route('/process_money', methods=["get","post"])
 def process_money():
     add = 0
-    
     try:
         session['message']
     except:
