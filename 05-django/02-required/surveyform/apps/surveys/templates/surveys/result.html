@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bord1">
+            <h2>Thanks for submitting this form! You have submitted this form {{request.session.num}} times.</h2>
+        </div>
+        <div class="bord2">
+            <h3>Submitted Information</h3>  
+            <table>
+                <tr><td>Name:</td><td>{{request.session.name}}</td></tr>
+                <tr><td>Dojo Location:</td><td>{{request.session.dojo}}</td></tr>
+                <tr><td>Favorite Language:</td><td>{{request.session.language}}</td></tr>
+                <tr><td>Comment:</td><td>{{request.session.comment}}</td></tr>
+                <tr><td colspan="2"><button><a href="/">Go Back</a></button></td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

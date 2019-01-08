@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <form action="/process/" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="name">Your Name:</label>
+                    <input type="text" name="name" id="name" size="35">
+                </div>
+                <div>
+                    <label for="dojo">Dojo Location:</label>
+                    <select name="dojo">
+                        <option value="Chicago">Chicago</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Tulsa">Tulsa</option>
+                        <option value="Boise">Boise</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="location">Favorite Language:</label>
+                    <select name="language">
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="Perl">Perl</option>
+                        <option value="Ruby">Ruby</option>
+                    </select>
+                </div>
+                <div>
+                    <div>Comment(optional):</div>
+                    <textarea name="comment" rows="6" cols="50"></textarea>
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

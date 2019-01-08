@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+    font-size: 24px;
+}
+
+input[type=radio] {
+    display: block;
+}
+
+.half1 {
+    display: inline-block;
+    border-right: 2px solid black;
+}
+
+.half2 {
+    display: inline-block;
+}
+
+div.half2 form input[type=submit] {
+    vertical-align: top;
+}
+

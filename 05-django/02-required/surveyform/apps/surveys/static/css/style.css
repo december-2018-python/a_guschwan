@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 10px;
+    width: 800px;
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: middle;
+}
+    .container div {
+        display: block;
+        text-align: center;
+    }
+select {
+    display: inline-block;
+    height: 30px;
+    font-size:24px;
+    margin-bottom: 10px;
+}
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+input[type="text"] {
+    height:30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+input[type="submit"] {
+    height: 25px;
+
+}
+textarea {
+    font-size: 18px;
+}
+.bord1 {
+    border: 1px solid black;
+    background-color: lightgreen;
+}
+.bord2 {
+    border: 1px solid black;
+    text-decoration: underline;
+}
+
